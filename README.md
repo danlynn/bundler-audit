@@ -8,7 +8,7 @@ This image allows you to run [`bundler-audit`](https://github.com/rubysec/bundle
 
 + [`0.9.1`,`latest` (0.9.1/Dockerfile)](https://github.com/danlynn/bundler-audit/blob/0.9.1/Dockerfile)
 
-## How to use
+### How to use
 
 Basically, navigate to your rails project directory and then copy/paste the following command:
 
@@ -28,4 +28,46 @@ If you want to specify your own options for the bundler-audit command (see bundl
 
 ```bash
 $ docker run --rm -v "$PWD":/myapp danlynn/bundler-audit bundler-audit check --update --format json
+```
+
+### Command Options
+
+Append `bundler-audit --help` to the end of `docker run --rm -v "$PWD":/myapp danlynn/bundler-audit` to see the general usage:
+
+```bash
+$ docker run --rm -v "$PWD":/myapp danlynn/bundler-audit bundler-audit --help
+
+Commands:
+  bundler-audit check [DIR]     # Checks the Gemfile.lock for insecure depend...
+  bundler-audit download        # Downloads ruby-advisory-db
+  bundler-audit help [COMMAND]  # Describe available commands or one specific...
+  bundler-audit stats           # Prints ruby-advisory-db stats
+  bundler-audit update          # Updates the ruby-advisory-db
+  bundler-audit version         # Prints the bundler-audit version
+```
+
+To get help on a particular command (like `check`) try appending `bundler-audit --help check` to the end:
+
+```bash
+$ docker run --rm -v "$PWD":/myapp danlynn/bundler-audit bundler-audit --help check
+
+Usage:
+  bundler-audit check [DIR]
+
+Options:
+  -q, [--quiet], [--no-quiet]
+  -v, [--verbose], [--no-verbose]
+  -i, [--ignore=one two three]
+  -u, [--update], [--no-update]
+  -D, [--database=DATABASE]
+                                     # Default: /root/.local/share/ruby-advisory-db
+  -F, [--format=FORMAT]
+                                     # Default: text
+  -c, [--config=CONFIG]
+                                     # Default: .bundler-audit.yml
+  -G, [--gemfile-lock=GEMFILE_LOCK]
+                                     # Default: Gemfile.lock
+  -o, [--output=OUTPUT]
+
+Checks the Gemfile.lock for insecure dependencies
 ```
