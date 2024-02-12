@@ -18,10 +18,10 @@ $ docker run --rm -v "$PWD":/myapp danlynn/bundler-audit
 
 This will share your current rails project directory with the container then run the `bundler-audit check --update` command which first updates the internal `ruby-advisory-db` then performs a check on your project's `Gemfile.lock` file.
 
-If you are a little less trusting about what you share with the docker container then you can share ONLY your project's Gemfile.lock when running the audit via:
+If you are a little less trusting about what you share with the docker container then you can share ONLY your project's Gemfile & Gemfile.lock when running the audit via:
 
 ```bash
-$ docker run --rm -v "$PWD/Gemfile.lock":/myapp/Gemfile.lock danlynn/bundler-audit
+$ docker run --rm -v "$PWD/Gemfile":/myapp/Gemfile -v "$PWD/Gemfile.lock":/myapp/Gemfile.lock danlynn/bundler-audit
 ```
 
 If you want to specify your own options for the bundler-audit command (see bundler-audit [README.md](https://github.com/rubysec/bundler-audit/blob/master/README.md)) then append your own bundler-audit command to the end:
