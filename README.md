@@ -1,6 +1,6 @@
 This image allows you to run [`bundler-audit`](https://github.com/rubysec/bundler-audit/) against any rails app without having to install any gems into your rails app or perform any rakefile changes. ([MIT License](https://github.com/danlynn/bundler-audit/blob/master/LICENSE))
 
-![stars](https://img.shields.io/docker/stars/danlynn/bundler-audit.svg) ![pulls](https://img.shields.io/docker/pulls/danlynn/bundler-audit.svg) ![automated](https://img.shields.io/docker/cloud/automated/danlynn/bundler-audit.svg) ![status](https://img.shields.io/docker/cloud/build/danlynn/bundler-audit.svg) ![MIT License](https://img.shields.io/github/license/danlynn/bundler-audit.svg)
+![stars](https://img.shields.io/docker/stars/danlynn/bundler-audit.svg) ![pulls](https://img.shields.io/docker/pulls/danlynn/bundler-audit.svg) ![automated](https://img.shields.io/docker/automated/danlynn/bundler-audit) ![MIT License](https://img.shields.io/github/license/danlynn/bundler-audit.svg)
 
 `bundler-audit 0.9.1`
 
